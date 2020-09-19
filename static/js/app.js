@@ -29,7 +29,6 @@ function plotid(id) {
         var otu_labels = sample.map(row => row.otu_labels)[0].slice(0,10).reverse();
         var valueCount = sample.map(row => row.sample_values)[0].slice(0,10).reverse();
 
-        
         //setting trace for bar chart
         var trace1 = {
             x: valueCount,
@@ -50,6 +49,41 @@ function plotid(id) {
 
         //plotting bar chart
         Plotly.newPlot("bar", data, layout);
+
+        var trace2 = {
+            x: otu_ids = sample.map(row => row.otu_ids)[0],
+            y: sample.map(row => row.sample_values)[0],
+            mode: "markers",
+            marker: {
+                size: sample.map(row => row.sample_values)[0],
+                color: sample.map(row => row.otu_ids)[0]
+            },
+            text: sample.map(row => row.otu_labels)[0]
+        };
+
+        data2 = [trace2];
+
+        var layout2 = {
+            xaxis:{title: "OTU ID"},
+            title: "volume by OTU ID",
+            height: 700,
+            width: 1170
+        };
+
+        Plotly.newPlot("bubble", data2, layout2);
+
+
+        var sample2 = filteredData[0].metadata.filter(row => row.id.toString() === id)[0];
+        var demo = d3.select("#sample-metadata");
+        demo.selectAll("div").remove();
+        console.log(sample2);
+        demo.append("div").text(`id: ${sample2.id}`);
+        demo.append("div").text(`ethinicity: ${sample2.ethinicity}`);
+        demo.append("div").text(`gender: ${sample2.gender}`);
+        demo.append("div").text(`age: ${sample2.age}`);
+        demo.append("div").text(`location: ${sample2.location}`);
+        demo.append("div").text(`bbtype: ${sample2.bbtype}`);
+        demo.append("div").text(`wfreq: ${sample2.wfreq}`);
 
     });
 };
