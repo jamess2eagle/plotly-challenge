@@ -1,7 +1,7 @@
 # plotly-challenge
 
 ## background
-The purpose of this project is to use [belly button biodiversity data](data/samples.json) in JSON format and build an interactive dashboard on [webpage](https://jamess2eagle.github.io/plotly-challenge/). The dataset contains test subject's demographic information along with OTU information. 
+The purpose of this project is to use [belly button biodiversity data](data/samples.json) in JSON format and build an interactive dashboard on a [webpage](https://jamess2eagle.github.io/plotly-challenge/). The dataset contains test subject's demographic information along with OTU information. 
 
 
 
