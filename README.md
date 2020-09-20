@@ -7,3 +7,4 @@ The interactive dashboard was built by using html, js and json, and d3 and plotl
 A user can filter the data by using a dropdown menu and by selecting a subject ID, various plots and the demographic information will be updated accordingly.
 
 ## Preview
+![](biodiversity.gif)
